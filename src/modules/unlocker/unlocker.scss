@@ -1,0 +1,85 @@
+.unlocker {
+  background-color: #8d7772;
+  width: 70%;
+  max-width: 350px;
+  padding: 5px;
+  border-radius: 100px;
+  box-shadow: inset 0 0 4px 0px #544c4a;
+
+  &__content {
+    display: flex;
+    background-color: inherit;
+    position: relative;
+    justify-content: right;
+    width: 100%;
+    max-width: 350px;
+    overflow: hidden;
+    padding: 5px;
+    box-sizing: border-box;
+    border-radius: inherit;
+  }
+
+  &__road {
+    margin: 0 auto;
+    width: calc(100% - 160px);
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 75px;
+    // background-image: url('@assets/icons/chevron.svg');
+    background-repeat: space no-repeat;
+    background-position: center;
+    background-size: 15px;
+  }
+
+  &__blocker {
+    width: calc(100% - 30px);
+    height: 100%;
+    position: absolute;
+    top: 0;
+    background: inherit;
+  }
+
+  &__handler-container {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 5px;
+    height: 100%;
+  }
+
+  &__loader {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-shadow: 4px 5px 5px 4px white inset;
+    background: linear-gradient(to right, white 50%, transparent 50%);
+    border-radius: 100%;
+    z-index: -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    animation: spin 1s infinite linear, appear 0.25s 0.25s linear forwards;
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes appear {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    &::after {
+      content: '';
+      width: 30px;
+      height: 30px;
+      background-color: #8d7772;
+      border-radius: 100%;
+    }
+  }
+}

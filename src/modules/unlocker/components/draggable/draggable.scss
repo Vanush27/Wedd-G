@@ -1,0 +1,32 @@
+.draggable {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+  width: 100%;
+
+  > button {
+    transition: box-shadow 300ms ease, transform 100ms ease;
+    appearance: none;
+    outline: none;
+    width: 45px;
+    height: 45px;
+    padding: 0;
+    background-color: transparent;
+    background-image: url('./assets/slider.svg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    touch-action: none;
+    cursor: grab;
+    flex-shrink: 0;
+    position: relative;
+    border-radius: 100%;
+    box-shadow: 0 0 10px 1px #544c4aa2, 0 0 0 3px transparent;
+
+    &:focus-visible:not(.active &) {
+      box-shadow: 0 0 10px 1px transparent, 0 0 0 3px #4c9ffe;
+    }
+  }
+}

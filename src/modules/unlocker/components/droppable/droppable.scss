@@ -1,0 +1,28 @@
+.droppable {
+  position: relative;
+  text-align: center;
+  border-radius: 100%;
+  width: 50px;
+  height: 50px;
+  box-sizing: border-box;
+  background-color: transparent;
+  border: 1px solid white;
+  box-shadow: inset #544c4a 0 0 4px 1px, inset transparent 0 0 4px 1px;
+  transition: box-shadow 250ms ease;
+  z-index: 1;
+  pointer-events: none;
+
+  &--over {
+    box-shadow: inset #544c4a9c 0 0 4px 1px, inset #1eb99d 0 0 4px 1px;
+    border-color: #1eb99d;
+  }
+
+  .draggable {
+    justify-content: center;
+
+    & > button {
+      box-shadow: none;
+      border-color: transparent;
+    }
+  }
+}

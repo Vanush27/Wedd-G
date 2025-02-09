@@ -1,0 +1,16 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 35px;
+}
+
+.images {
+  width: 60%;
+}
+
+.text {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 18px;
+}

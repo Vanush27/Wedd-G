@@ -1,0 +1,23 @@
+.countdown_circle_timer {
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  position: absolute;
+  top: 73%;
+  left: 11%;
+}
+
+.timerBox {
+  font-size: 30px;
+}
+.time {
+  padding: 10px;
+  font-size: 40px;
+}
+
+@media only screen and (max-width: 480px) {
+  .countdown_circle_timer {
+    font-size: 29px;
+  }
+}

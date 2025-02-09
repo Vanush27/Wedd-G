@@ -1,0 +1,17 @@
+.container {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.programmerImg {
+  width: 550px;
+}
+
+@media only screen and (max-width: 768px) {
+  .programmerImg {
+    width: 60%;
+  }
+}

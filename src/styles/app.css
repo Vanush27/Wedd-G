@@ -1,0 +1,73 @@
+
+
+#root {
+	overflow: hidden;
+	height: 100%;
+}
+
+::selection {
+	text-shadow: none;
+}
+
+* {
+	box-sizing: border-box;
+
+}
+
+a {
+	cursor: pointer;
+	/* font-size: inherit; */
+	/* line-height: inherit; */
+	outline: none;
+	text-decoration: underline;
+}
+a:hover,
+a:focus,
+a:active {
+	text-decoration: underline;
+}
+
+button,
+input[type='button'],
+.button {
+	border-width: 1px;
+	appearance: none;
+	box-shadow: none;
+	cursor: pointer;
+	outline: 0;
+}
+
+button:disabled,
+button[disabled],
+input[type='button']:disabled,
+input[type='button'][disabled],
+.button:disabled,
+.button[disabled] {
+	cursor: not-allowed;
+}
+
+img {
+	pointer-events: none;
+	user-select: none;
+}
+
+b,
+strong {
+	font-family: inherit;
+	/* font-size: inherit; */
+	font-weight: bold;
+	line-height: inherit;
+}
+
+p {
+    margin-bottom: 10px;
+	font-family: monospace;
+}
+
+h3 {
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-family: monospace;
+    font-size: 20px;
+    line-height: 30px;
+}

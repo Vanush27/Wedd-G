@@ -18,9 +18,25 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "baseUrl" : "." ,
+    "paths": {
+			"@components": ["./src/components"],
+			"@assets/*": ["./src/assets/*"],
+			"@components/*": ["./src/components/*"],
+			"@modules": ["./src/modules"],
+			"@modules/*": ["./src/modules/*"],
+      "@constants": ["./src/constants"],
+			"@ui-kit": ["./src/ui-kit"],
+			"@ui-kit/*": ["./src/ui-kit/*"],
+			"@utils": ["./src/utils"],
+		},
+    "plugins": [{ "name": "typescript-plugin-css-modules" }],
+		"useUnknownInCatchVariables": true
+    
   },
   "include": [
-    "src"
+    "src/**/*",
+    "declarations/*.d.ts",
   ]
 }
