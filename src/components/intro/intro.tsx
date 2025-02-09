@@ -1,10 +1,9 @@
 import * as React from "react";
 
-import CircleTimerCountdown from "@ui-kit/CircleTimerCountdown/CountdownCircleTimer";
-// import foregraound_image from " @assets/images/foreground.jpg";
 import foregraound_image from "../../assets/images/foreground.jpg";
 
 import styles from "./intro.module.css";
+import CircleTimerCountdown from "@ui-kit/CircleTimerCountdown/CountdownCircleTimer";
 
 const Intro = () => {
   return (
@@ -18,18 +17,8 @@ const Intro = () => {
         />
         <CircleTimerCountdown />
       </div>
-
-      {/* <Timer /> */}
     </div>
   );
 };
 
 export const MemoizedIntro = React.memo(Intro);
-
-{
-  /* <p>
-  {"Մենք հրավիրում ենք ձեզ մեր հարսանիքին"}</p>
-        <p>
-          <span className="number">{"25 օգոստոս\n 2025"}</span>
-        </p> */
-}
