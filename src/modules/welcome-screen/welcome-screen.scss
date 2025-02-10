@@ -3,12 +3,12 @@
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
+  height: 95vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 50px;
+  gap: 35px;
   user-select: none;
 
   &::before {
