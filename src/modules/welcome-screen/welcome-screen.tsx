@@ -40,7 +40,6 @@ const WelcomeScreen = ({ onOpen }: { onOpen: () => any }) => {
       }}
     >
       <div className={block.element("header-wrapper")}>
-        {/* Բացel հրավերiratomse */}
         <span data-heading="Открыть">Բացել</span>
         <span data-heading="приглашение">հրավերը</span>
       </div>

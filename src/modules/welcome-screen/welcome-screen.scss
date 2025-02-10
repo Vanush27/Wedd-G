@@ -54,21 +54,21 @@
   }
 
   &__header-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    // display: flex;
+    // flex-wrap: wrap;
+    // justify-content: center;
 
     span {
       white-space: pre;
-      display: inline-block;
+      // display: inline-block;
       background: linear-gradient(to bottom, hsl(41, 33%, 80%) 20%, hsl(45, 100%, 80%) 60%, hsl(40, 59%, 70%) 68%);
       background-clip: text;
       color: transparent;
-      font-family: esenin, serif;
+      // font-family: esenin, serif;
       position: relative;
-      margin: 1px;
+      margin: 2px;
       font-weight: 700;
-      font-size: 43px;
+      font-size: 40px;
     }
   }
 
