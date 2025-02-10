@@ -1,7 +1,6 @@
 .containerForm {
   display: flex;
   flex-direction: column;
-
   width: 100%;
   padding: 0px;
   /* align-items: center; */
@@ -23,26 +22,35 @@
   padding-left: 30px;
   padding-right: 30px;
   padding-bottom: 50px;
+  padding-top: 30px;
 }
 .button {
   padding: 20px;
   width: 100%;
   border-radius: 18px;
-  background: var(--color-white);
-  font-size: 20px;
+  background: var(--color-primaryBlack);
+  color: var(--color-white);
+  font-size: 22px;
+  font-family: monospace;
 }
 
 .label {
   font-size: 24px;
+  /* line-height: 1.9; */
 }
 
 .quantity {
-  padding-top: 40px;
-  font-size: 24px;
+  padding-top: 30px;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.9;
 }
 
 .title_text {
-  font-size: 28px;
+  font-size: 22px;
+  padding-top: 30px;
+  line-height: 1.9;
+  font-weight: 600;
 }
 
 .radioText {

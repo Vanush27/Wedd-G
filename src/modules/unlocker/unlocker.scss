@@ -8,7 +8,8 @@
 
   &__content {
     display: flex;
-    background-color: inherit;
+    // background-color: inherit;
+    background-color: #524343;
     position: relative;
     justify-content: right;
     width: 100%;
@@ -26,7 +27,7 @@
     position: absolute;
     top: 0;
     left: 75px;
-    // background-image: url('@assets/icons/chevron.svg');
+    background-image: url('../../assets/icons/chevron.svg');
     background-repeat: space no-repeat;
     background-position: center;
     background-size: 15px;

@@ -9,6 +9,7 @@ const Intro = () => {
   return (
     <div className={styles.container}>
       <div>
+        <p className={styles.title}>ԳՈՌ ԵՎ ՄԱՆԵ</p>
         <img
           src={foregraound_image}
           alt="My SVG"

@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 35px;
+  margin: 30px;
 }
 
 .images {
@@ -11,6 +11,9 @@
 }
 
 .text {
-  font-family: Georgia, "Times New Roman", Times, serif;
-  font-size: 18px;
+  font-size: 20px;
+  margin-top: 25px;
+  margin-bottom: 30px;
+  line-height: 1.1;
+  font-weight: 600;
 }

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import cn from "classnames";
 
 // eslint-disable-next-line import/extensions
-import wallImageUrl from "@assets/images/wall.jpg";
+import wallImageUrl from "@assets/images/background_image.jpg";
 import "./vignette.scss";
 import { createBlock } from "@utils";
 

@@ -8,8 +8,8 @@ import styles from "./InviteForm.module.css";
 const OK = "Այո, կգամ";
 const NO = "Ցավոք, չեմ կարողանա";
 
-const PESA = "փեսա";
-const HARS = "հարս";
+const PESA = "Փեսա";
+const HARS = "Հարս";
 
 const InviteForm: React.FC = () => {
   const [nameValue, setNameValue] = useState("");
@@ -61,7 +61,7 @@ const InviteForm: React.FC = () => {
         />
 
         <label className={styles.quantity}>
-          Քանակը (Количество людей):
+          Քանակը(Մարդկանց թիվը):
           <select
             value={quantity}
             onChange={(e) => setQuantity(e.target.value)}
@@ -76,6 +76,8 @@ const InviteForm: React.FC = () => {
             <option value="3">3</option>
             <option value="4">4</option>
             <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
           </select>
         </label>
 

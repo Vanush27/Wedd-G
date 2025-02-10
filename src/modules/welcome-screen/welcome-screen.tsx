@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import cn from "classnames";
 import { createBlock } from "../../utils";
 // eslint-disable-next-line import/extensions
-import bgFlowerImageUrl from "../../assets/images/wall.jpg";
+import bgFlowerImageUrl from "../../assets/images/background_image.jpg";
 import { Unlocker } from "../unlocker";
 import "./welcome-screen.scss";
 

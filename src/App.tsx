@@ -2,7 +2,9 @@ import { useCallback, useState } from "react";
 import { MainScreen } from "./modules/main-screen";
 
 import { WelcomeScreen } from "./modules/welcome-screen";
-import { AudioPlayer, Vignette } from "../src/components";
+import { Vignette } from "../src/components";
+
+import "./styles";
 
 function App() {
   const [isInvitationOpen, setInvitationOpen] = useState(false);
@@ -14,7 +16,7 @@ function App() {
     <>
       {isInvitationOpen ? (
         <div style={{ width: "100%" }}>
-          <AudioPlayer isInvitationOpen={isInvitationOpen} />
+          {/* <AudioPlayer isInvitationOpen={isInvitationOpen} /> */}
           {isLoadEnd && <MainScreen />}
         </div>
       ) : (
@@ -22,12 +24,7 @@ function App() {
           <Vignette onLoadEnd={() => setIsLoadEnd(true)} />
           <WelcomeScreen onOpen={onOpen} />
         </>
-        // <FrontPageInvitation setInvitationOpen={setInvitationOpen} />
       )}
-
-      {/* {!isLoadEnd && <Vignette onLoadEnd={() => setIsLoadEnd(true)} />} */}
-      {/* {!isOpened && <WelcomeScreen onOpen={onOpen} />} */}
-      {/* {isLoadEnd && <MainScreen isOpened={isOpened} />} */}
     </>
   );
 }

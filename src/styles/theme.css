@@ -40,20 +40,6 @@ body {
   /* font-family: monospace; */
 }
 
-p,
-span,
-small {
-  /* color: inherit; */
-  /* font-family: monospace; */
-}
-
-button {
-  /* color: inherit; */
-  /* font-family: monospace; */
-
-  /* font-size: inherit; */
-}
-
 ::selection {
   /* background: var(--color-yellow); */
   text-shadow: none;
