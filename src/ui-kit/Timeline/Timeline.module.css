@@ -61,13 +61,13 @@
 
 .text_time {
   color: #14161b;
-  font-size: px;
+  font-size: 22px;
   font-weight: 500;
   line-height: 20px;
   animation: slideInRight 1s ease-out;
 }
 .text {
-  font-size: 16px;
+  font-size: 17px;
   padding-top: 16px;
   color: #14161b;
   text-transform: uppercase;
