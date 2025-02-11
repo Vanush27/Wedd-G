@@ -36,7 +36,7 @@ const CircleTimerCountdown: React.FC = () => {
 
       <div className={styles.countdown_circle_timer}>
         <CountdownCircleTimer
-          colors="#e60003"
+          colors="#000000"
           isPlaying
           duration={daysDuration}
           size={100}
@@ -50,7 +50,7 @@ const CircleTimerCountdown: React.FC = () => {
           )}
         </CountdownCircleTimer>
         <CountdownCircleTimer
-          colors="#010290"
+          colors="#000000"
           duration={daySeconds}
           size={90}
           isPlaying
@@ -68,7 +68,7 @@ const CircleTimerCountdown: React.FC = () => {
         </CountdownCircleTimer>
         <CountdownCircleTimer
           strokeWidth={0}
-          colors="#ff7c00"
+          colors="#000000"
           size={110}
           isPlaying
           duration={hourSeconds}

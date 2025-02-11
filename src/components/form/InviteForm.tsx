@@ -61,7 +61,7 @@ const InviteForm: React.FC = () => {
         />
 
         <label className={styles.quantity}>
-          Քանակը(Մարդկանց թիվը):
+          Քանակը(Մարդկանց թիվը)
           <select
             value={quantity}
             onChange={(e) => setQuantity(e.target.value)}

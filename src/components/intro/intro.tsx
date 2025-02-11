@@ -4,12 +4,17 @@ import foregraound_image from "../../assets/images/foreground.jpg";
 
 import styles from "./intro.module.css";
 import CircleTimerCountdown from "@ui-kit/CircleTimerCountdown/CountdownCircleTimer";
+import Title from "@components/text/Title";
 
 const Intro = () => {
   return (
     <div className={styles.container}>
       <div>
-        <p className={styles.title}>ԳՈՌ ԵՎ ՄԱՆԵ</p>
+        <div className={styles.title}>
+          <Title />
+        </div>
+
+        {/* <p }>ԳՈՌ ԵՎ ՄԱՆԵ</p> */}
         <img
           src={foregraound_image}
           alt="My SVG"
