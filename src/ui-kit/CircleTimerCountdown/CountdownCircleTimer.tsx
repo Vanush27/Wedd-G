@@ -12,7 +12,7 @@ const renderTime = (dimension: string, time: number) => {
   return (
     <div className={styles.timerBox}>
       <div className={styles.time}>{time}</div>
-      <div>{dimension}</div>
+      <div className={styles.time}>{dimension}</div>
     </div>
   );
 };
