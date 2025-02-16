@@ -1,11 +1,11 @@
 {
   "short_name": "Gor & Mane",
-  "name": "Gor&Mane",
+  "name": "Gor & Mane",
   "icons": [
     {
-      "src": "logo.jpg",
+      "src": "logo.png",
       "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/jpg"
+      "type": "image/png"
     }
   ],
   "start_url": ".",
