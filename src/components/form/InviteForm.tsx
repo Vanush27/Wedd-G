@@ -1,7 +1,10 @@
-import { useState } from "react";
 import * as React from "react";
+import { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
 import { addDoc, collection } from "firebase/firestore";
 import { db } from "../../firebase.config";
+
+import "react-toastify/dist/ReactToastify.css";
 
 import styles from "./InviteForm.module.css";
 
@@ -39,7 +42,7 @@ const InviteForm: React.FC = () => {
       setArrive(OK);
       setGender(PESA);
 
-      alert("Տվյալները հաջողությամբ պահպանվել են, շնորհակալություն ձեզ!");
+      toast.success("Տվյալները հաջողությամբ գրանցվեցին, Շնորհակալություն 😊");
     } catch (error) {
       console.error("Error adding document: ", error);
       alert("Error saving data. Please try again.");
@@ -49,94 +52,107 @@ const InviteForm: React.FC = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div className={styles.containerForm}>
-        <input
-          placeholder="Անուն Ազգանուն"
-          type="text"
-          value={nameValue}
-          onChange={(e) => setNameValue(e.target.value)}
-          className={styles.input}
-          required
-        />
-
-        <label className={styles.quantity}>
-          Հյուրերի քանակը
-          <select
-            value={quantity}
-            onChange={(e) => setQuantity(e.target.value)}
+    <>
+      <form onSubmit={handleSubmit}>
+        <div className={styles.containerForm}>
+          <input
+            placeholder="Անուն Ազգանուն"
+            type="text"
+            value={nameValue}
+            onChange={(e) => setNameValue(e.target.value)}
             className={styles.input}
             required
-          >
-            <option value="" disabled hidden>
-              Քանակը ընտրեք
-            </option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-          </select>
-        </label>
+          />
 
-        <p className={styles.title_text}>Կկարողանա՞ք մասնակցել միջոցառմանը</p>
-        <div className={styles.radioGroup}>
-          <label className={styles.label}>
-            <input
-              type="radio"
-              name="category"
-              value={OK}
-              checked={arrive === OK}
-              onChange={() => setArrive(OK)}
-            />
-            <span className={styles.radioText}>{OK}</span>
+          <label className={styles.quantity}>
+            Հյուրերի քանակը
+            <select
+              value={quantity}
+              onChange={(e) => setQuantity(e.target.value)}
+              className={styles.input}
+              required
+            >
+              <option value="" disabled hidden>
+                Քանակը ընտրեք
+              </option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+            </select>
           </label>
-          <label className={styles.label}>
-            <input
-              type="radio"
-              name="category"
-              value={NO}
-              checked={arrive === NO}
-              onChange={() => setArrive(NO)}
-            />
-            <span className={styles.radioText}>{NO}</span>
-          </label>
+
+          <p className={styles.title_text}>Կկարողանա՞ք մասնակցել միջոցառմանը</p>
+          <div className={styles.radioGroup}>
+            <label className={styles.label}>
+              <input
+                type="radio"
+                name="category"
+                value={OK}
+                checked={arrive === OK}
+                onChange={() => setArrive(OK)}
+              />
+              <span className={styles.radioText}>{OK}</span>
+            </label>
+            <label className={styles.label}>
+              <input
+                type="radio"
+                name="category"
+                value={NO}
+                checked={arrive === NO}
+                onChange={() => setArrive(NO)}
+              />
+              <span className={styles.radioText}>{NO}</span>
+            </label>
+          </div>
+
+          <p className={styles.title_text}>Ու՞մ կողմից եք հրավիրված</p>
+
+          <div className={styles.radioGroup}>
+            <label className={styles.label}>
+              <input
+                type="radio"
+                name="gender"
+                value={PESA}
+                checked={gender === PESA}
+                onChange={() => setGender(PESA)}
+              />
+              <span className={styles.radioText}>{PESA}</span>
+            </label>
+            <label className={styles.label}>
+              <input
+                type="radio"
+                name="gender"
+                value={HARS}
+                checked={gender === HARS}
+                onChange={() => setGender(HARS)}
+              />
+              <span className={styles.radioText}>{HARS}</span>
+            </label>
+          </div>
         </div>
 
-        <p className={styles.title_text}>Ու՞մ կողմից եք հրավիրված</p>
-
-        <div className={styles.radioGroup}>
-          <label className={styles.label}>
-            <input
-              type="radio"
-              name="gender"
-              value={PESA}
-              checked={gender === PESA}
-              onChange={() => setGender(PESA)}
-            />
-            <span className={styles.radioText}>{PESA}</span>
-          </label>
-          <label className={styles.label}>
-            <input
-              type="radio"
-              name="gender"
-              value={HARS}
-              checked={gender === HARS}
-              onChange={() => setGender(HARS)}
-            />
-            <span className={styles.radioText}>{HARS}</span>
-          </label>
+        <div className={styles.buttonWrapper}>
+          <button type="submit" className={styles.button} disabled={loading}>
+            {loading ? "Ուղարկվում..." : "Ուղարկել"}
+          </button>
         </div>
-      </div>
-
-      <div className={styles.buttonWrapper}>
-        <button type="submit" className={styles.button} disabled={loading}>
-          {loading ? "Ուղարկվում..." : "Ուղարկել"}
-        </button>
-      </div>
-    </form>
+      </form>
+      <ToastContainer
+        position="top-center"
+        autoClose={6000} // Auto-close after 5 seconds
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
+    </>
   );
 };
 
