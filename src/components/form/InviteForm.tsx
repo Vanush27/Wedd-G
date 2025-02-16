@@ -5,7 +5,6 @@ import { addDoc, collection } from "firebase/firestore";
 import { db } from "../../firebase.config";
 
 import "react-toastify/dist/ReactToastify.css";
-
 import styles from "./InviteForm.module.css";
 
 const OK = "Այո, կգամ";
@@ -42,7 +41,8 @@ const InviteForm: React.FC = () => {
       setArrive(OK);
       setGender(PESA);
 
-      toast.success("Տվյալները հաջողությամբ գրանցվեցին, Շնորհակալություն 😊");
+      toast.success("Տվյալները հաջողությամբ գրանցվեցին");
+      // toast.success("Տվյալները հաջողությամբ գրանցվեցին, Շնորհակալություն 😊");
     } catch (error) {
       toast.error("Error saving data. Please try again.");
     } finally {
@@ -142,7 +142,7 @@ const InviteForm: React.FC = () => {
       </form>
       <ToastContainer
         position="top-center"
-        autoClose={6000} // Auto-close after 5 seconds
+        autoClose={7000}
         hideProgressBar={false}
         newestOnTop={false}
         closeOnClick
@@ -150,6 +150,7 @@ const InviteForm: React.FC = () => {
         pauseOnFocusLoss
         draggable
         pauseOnHover
+        className={styles.toast_message}
       />
     </>
   );
