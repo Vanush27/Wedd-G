@@ -61,7 +61,7 @@ const InviteForm: React.FC = () => {
         />
 
         <label className={styles.quantity}>
-          Քանակը(Մարդկանց թիվը)
+          Հյուրերի քանակը
           <select
             value={quantity}
             onChange={(e) => setQuantity(e.target.value)}
@@ -81,9 +81,7 @@ const InviteForm: React.FC = () => {
           </select>
         </label>
 
-        <p className={styles.title_text}>
-          Կկարողանա՞ք ներկա գտնվել միջոցառմանը
-        </p>
+        <p className={styles.title_text}>Կկարողանա՞ք մասնակցել միջոցառմանը</p>
         <div className={styles.radioGroup}>
           <label className={styles.label}>
             <input
