@@ -44,8 +44,7 @@ const InviteForm: React.FC = () => {
 
       toast.success("Տվյալները հաջողությամբ գրանցվեցին, Շնորհակալություն 😊");
     } catch (error) {
-      console.error("Error adding document: ", error);
-      alert("Error saving data. Please try again.");
+      toast.error("Error saving data. Please try again.");
     } finally {
       setLoading(false);
     }
