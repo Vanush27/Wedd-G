@@ -1,11 +1,11 @@
 {
-  "short_name": "Gor & Mane",
-  "name": "Gor & Mane",
+  "short_name": "T1 & T2",
+  "name": "T1 & T2",
   "icons": [
     {
-      "src": "logo.png",
+      "src": "logo.jpg",
       "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/png"
+      "type": "image/jpg"
     }
   ],
   "start_url": ".",

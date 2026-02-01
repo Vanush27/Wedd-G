@@ -9,7 +9,7 @@ const RSVPFormt = () => {
       <img src={rsvpImage} alt="rsvpImage" className={styles.images} />
       <div>
         <p className={styles.text}>
-          Խնդրում ենք հաստատել Ձեր մասնակցությունը մինչև օգոստոսի 18-ը։
+          Խնդրում ենք հաստատել Ձեր մասնակցությունը մինչև XXXX XX-ը։
         </p>
       </div>
       <InviteForm />

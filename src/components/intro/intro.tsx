@@ -14,7 +14,7 @@ const Intro = () => {
           <Title />
         </div>
 
-        {/* <p }>ԳՈՌ ԵՎ ՄԱՆԵ</p> */}
+        {/* <p>ԳՈՌ ԵՎ ՄԱՆԵ</p> */}
         <img
           src={foregraound_image}
           alt="My SVG"

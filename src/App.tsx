@@ -5,6 +5,7 @@ import { WelcomeScreen } from "./modules/welcome-screen";
 import { Vignette } from "../src/components";
 
 import "./styles";
+import AudioPlayer from "@components/audio/AudioPlayer";
 
 function App() {
   const [isInvitationOpen, setInvitationOpen] = useState(false);
@@ -16,7 +17,7 @@ function App() {
     <>
       {isInvitationOpen ? (
         <div style={{ width: "100%" }}>
-          {/* <AudioPlayer isInvitationOpen={isInvitationOpen} /> */}
+          <AudioPlayer isInvitationOpen={isInvitationOpen} />
           {isLoadEnd && <MainScreen />}
         </div>
       ) : (

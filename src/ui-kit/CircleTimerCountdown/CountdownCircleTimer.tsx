@@ -5,7 +5,7 @@ import { daySeconds, hourSeconds, minuteSeconds } from "@constants";
 import styles from "./Circle.module.css";
 
 const weddingDate = Math.floor(
-  new Date("2025-08-25T17:00:00")?.getTime() / 1000
+  new Date("2025-01-01T18:00:00")?.getTime() / 1000
 );
 
 const renderTime = (dimension: string, time: number) => {

@@ -26,7 +26,7 @@ const MainScreen = () => (
         մեզ հետ այս հիշարժան օրը։
       </p>
 
-      <p className={styles.text_date}>25.08.2025</p>
+      <p className={styles.text_date}>XX.XX.XXXX</p>
     </div>
 
     <div className={styles.container}>

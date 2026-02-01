@@ -7,7 +7,7 @@ const Title = () => {
     <div>
       <div className={styles.container}>
         <div className={styles.text_box}>
-          <h1 className={styles.title}>ԳՈՌ ԵՎ ՄԱՆԵ</h1>
+          <h1 className={styles.title}>Txa ԵՎ Axchik</h1>
         </div>
       </div>
     </div>
