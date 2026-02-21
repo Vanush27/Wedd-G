@@ -3,10 +3,12 @@ import RSVPFormt from "../RSVP/RSVPform";
 
 import styles from "./Programmer.module.css";
 import Timeline from "@ui-kit/Timeline/Timeline";
+import { WaxSealInvite } from "@modules/wax-sealInvite-screen";
 
 const Programmer = () => {
   return (
     <div className={styles.container}>
+      <WaxSealInvite />
       <img src={time} alt="time for you" className={styles.programmerImg} />
       <Timeline />
       <RSVPFormt />
