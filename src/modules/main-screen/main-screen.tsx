@@ -11,6 +11,8 @@ import Programmer from "@components/programmer/Programmer";
 import HallPage from "@components/event-details/HallPage";
 import { Footer } from "@components";
 
+import Timeline from "@modules/testTime/Timeline";
+
 const MainScreen = () => (
   <div
     style={{ width: "100%" }}
@@ -36,6 +38,8 @@ const MainScreen = () => (
       <ChurchPage />
       <HallPage />
       <Programmer />
+
+      <Timeline />
       <Footer />
     </div>
   </div>

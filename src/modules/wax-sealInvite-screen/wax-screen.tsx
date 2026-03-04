@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import envelope from "@assets/images/envelope.png";
 
-const WaxSealSmooth: React.FC = () => {
+const WaxSealHeart: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const drawing = useRef(false);
   const last = useRef({ x: 0, y: 0 });
@@ -16,33 +16,67 @@ const WaxSealSmooth: React.FC = () => {
     canvas.width = 340;
     canvas.height = 420;
 
-    // 🔴 Реалистичная печать
+    const centerX = 170;
+    const centerY = 160;
+    const size = 35;
 
-    const g = ctx.createRadialGradient(170, 170, 5, 170, 170, 45);
+    // ❤️ Красный реалистичный градиент
+    const g = ctx.createRadialGradient(
+      centerX - 10,
+      centerY - 10,
+      5,
+      centerX,
+      centerY,
+      70
+    );
 
-    g.addColorStop(0, "#f6efe6");
-    g.addColorStop(0.6, "#eadfce");
-    g.addColorStop(1, "#d6c7b2");
+    g.addColorStop(0, "#ff4d4d");
+    g.addColorStop(0.5, "#c1121f");
+    g.addColorStop(1, "#5a0000");
 
     ctx.fillStyle = g;
-    ctx.beginPath();
-    ctx.arc(170, 170, 40, 0, Math.PI * 2);
-    ctx.fill();
 
-    // инициалы
-    ctx.fillStyle = "black";
-    ctx.font = "bold 20px serif";
+    ctx.shadowColor = "rgba(0,0,0,0.35)";
+    ctx.shadowBlur = 12;
+
+    // ❤️ Рисуем сердце
+    ctx.beginPath();
+    ctx.moveTo(centerX, centerY + size / 2);
+
+    ctx.bezierCurveTo(
+      centerX + size,
+      centerY - size,
+      centerX + size * 2,
+      centerY + size,
+      centerX,
+      centerY + size * 2
+    );
+
+    ctx.bezierCurveTo(
+      centerX - size * 2,
+      centerY + size,
+      centerX - size,
+      centerY - size,
+      centerX,
+      centerY + size / 2
+    );
+
+    ctx.closePath();
+    ctx.fill();
+    ctx.shadowBlur = 0;
+
+    // 🖤 Инициалы строго по центру
+    ctx.fillStyle = "#2b0d0d";
+    ctx.font = "bold 18px serif";
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
-    ctx.fillText("T1 & T2", 170, 170);
+    ctx.fillText("T1 & T2", centerX, centerY + 15);
 
     // режим стирания
     ctx.globalCompositeOperation = "destination-out";
-
-    // плавная кисть
     ctx.lineCap = "round";
     ctx.lineJoin = "round";
-    ctx.lineWidth = 40;
+    ctx.lineWidth = 45;
   }, []);
 
   const getXY = (e: React.MouseEvent | React.TouchEvent) => {
@@ -81,14 +115,28 @@ const WaxSealSmooth: React.FC = () => {
 
   return (
     <div style={{ position: "relative", width: 340 }}>
-      {/* 💌 Конверт */}
       <img
         src={envelope}
         alt="envelope"
         style={{ width: "100%", display: "block" }}
       />
 
-      {/* 🔴 Печать */}
+      {/* 🔥 Надпись с анимацией */}
+      <div
+        style={{
+          position: "absolute",
+          top: 120,
+          left: "50%",
+          transform: "translateX(-50%)",
+          fontFamily: "serif",
+          fontSize: 16,
+          color: "#5a0000",
+          animation: "floatText 1.8s ease-in-out infinite",
+        }}
+      >
+        Стирать тут
+      </div>
+
       <canvas
         ref={canvasRef}
         style={{
@@ -105,8 +153,19 @@ const WaxSealSmooth: React.FC = () => {
         onTouchMove={move}
         onTouchEnd={stop}
       />
+
+      {/* CSS анимация */}
+      <style>
+        {`
+          @keyframes floatText {
+            0% { transform: translate(-50%, 0px); }
+            50% { transform: translate(-50%, -8px); }
+            100% { transform: translate(-50%, 0px); }
+          }
+        `}
+      </style>
     </div>
   );
 };
 
-export default WaxSealSmooth;
+export default WaxSealHeart;
