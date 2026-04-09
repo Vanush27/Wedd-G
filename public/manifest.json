@@ -1,11 +1,11 @@
 {
-  "short_name": "T1 & T2",
-  "name": "T1 & T2",
+  "short_name": "Սամվել ԵՎ Միլենա",
+  "name": "Սամվել ԵՎ Միլենա",
   "icons": [
     {
-      "src": "logo.jpg",
+      "src": "logo.png",
       "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/jpg"
+      "type": "image/png"
     }
   ],
   "start_url": ".",

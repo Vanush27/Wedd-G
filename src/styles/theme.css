@@ -1,4 +1,16 @@
 :root {
+  /*
+    Տպագրություն / типографика (Google Fonts, index.html)
+    — Հայերեն. Noto — հուսալի և ընթեռնելի
+    — Լատինական «սիրո» գրություն. Great Vibes / Alex Brush / Dancing Script
+    — Լատինական դեկորատիվ տեքստ. Cormorant Garamond
+  */
+  --font-hy-serif: "Noto Serif Armenian", "Noto Serif", serif;
+  --font-hy-sans: "Noto Sans Armenian", "Noto Sans", system-ui, sans-serif;
+  --font-script-love: "Great Vibes", "Dancing Script", cursive;
+  --font-script-alt: "Alex Brush", "Great Vibes", cursive;
+  --font-latin-elegant: "Cormorant Garamond", "Noto Serif", serif;
+
   /* Colors */
 
   --background-color: #d6e6fb;
@@ -30,14 +42,9 @@
 :root,
 html,
 body {
-  /* Positioning */
   box-sizing: border-box;
   color: var(--color-primaryBlack);
-
-  /* font-size: 16px; */
-  /* font-weight: 400; */
-  /* line-height: 21px; */
-  /* font-family: monospace; */
+  font-family: var(--font-hy-sans);
 }
 
 ::selection {

@@ -1,3 +1,5 @@
+/** @format */
+
 import * as React from "react";
 import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
@@ -7,15 +9,15 @@ import { db } from "../../firebase.config";
 import "react-toastify/dist/ReactToastify.css";
 import styles from "./InviteForm.module.css";
 
-const OK = "Այո, կգամ";
-const NO = "Ցավոք, չեմ կարողանա";
+const OK = "Այո";
+const NO = "Չեմ կարող գալ";
 
 const PESA = "Փեսա";
 const HARS = "Հարս";
 
 const InviteForm: React.FC = () => {
   const [nameValue, setNameValue] = useState("");
-  const [quantity, setQuantity] = useState("1");
+  const [quantity, setQuantity] = useState("");
   const [gender, setGender] = useState(PESA);
   const [arrive, setArrive] = useState(OK);
   const [loading, setLoading] = useState(false);
@@ -34,15 +36,13 @@ const InviteForm: React.FC = () => {
       };
 
       await addDoc(collection(db, "users"), formData);
-
       setNameValue("");
-
-      setQuantity("1");
+      setQuantity("");
       setArrive(OK);
       setGender(PESA);
 
-      toast.success("Տվյալները հաջողությամբ գրանցվեցին");
-      // toast.success("Տվյալները հաջողությամբ գրանցվեցին, Շնորհակալություն 😊");
+      // toast.success("Տվյալները հաջողությամբ գրանցվեցին");
+      toast.success("Շնորհակալություն 😊");
     } catch (error) {
       toast.error("Error saving data. Please try again.");
     } finally {
@@ -54,59 +54,32 @@ const InviteForm: React.FC = () => {
     <>
       <form onSubmit={handleSubmit}>
         <div className={styles.containerForm}>
-          <input
-            placeholder="Անուն Ազգանուն"
-            type="text"
-            value={nameValue}
-            onChange={(e) => setNameValue(e.target.value)}
-            className={styles.input}
-            required
-          />
+          <label className={styles.quantity}>
+            Անուն Ազգանուն
+            <input
+              type="text"
+              value={nameValue}
+              onChange={(e) => setNameValue(e.target.value)}
+              className={styles.input}
+              autoComplete="name"
+              required
+            />
+          </label>
 
           <label className={styles.quantity}>
             Հյուրերի քանակը
-            <select
+            <input
+              type="number"
+              // min={1}
+              max={30}
+              step={1}
+              inputMode="numeric"
               value={quantity}
               onChange={(e) => setQuantity(e.target.value)}
               className={styles.input}
               required
-            >
-              <option value="" disabled hidden>
-                Քանակը ընտրեք
-              </option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-            </select>
+            />
           </label>
-
-          <p className={styles.title_text}>Կկարողանա՞ք մասնակցել միջոցառմանը</p>
-          <div className={styles.radioGroup}>
-            <label className={styles.label}>
-              <input
-                type="radio"
-                name="category"
-                value={OK}
-                checked={arrive === OK}
-                onChange={() => setArrive(OK)}
-              />
-              <span className={styles.radioText}>{OK}</span>
-            </label>
-            <label className={styles.label}>
-              <input
-                type="radio"
-                name="category"
-                value={NO}
-                checked={arrive === NO}
-                onChange={() => setArrive(NO)}
-              />
-              <span className={styles.radioText}>{NO}</span>
-            </label>
-          </div>
 
           <p className={styles.title_text}>Ու՞մ կողմից եք հրավիրված</p>
 
@@ -130,6 +103,30 @@ const InviteForm: React.FC = () => {
                 onChange={() => setGender(HARS)}
               />
               <span className={styles.radioText}>{HARS}</span>
+            </label>
+          </div>
+
+          <p className={styles.title_text}>Մասնակցելու եք՞</p>
+          <div className={styles.radioGroup}>
+            <label className={styles.label}>
+              <input
+                type="radio"
+                name="category"
+                value={OK}
+                checked={arrive === OK}
+                onChange={() => setArrive(OK)}
+              />
+              <span className={styles.radioText}>{OK}</span>
+            </label>
+            <label className={styles.label}>
+              <input
+                type="radio"
+                name="category"
+                value={NO}
+                checked={arrive === NO}
+                onChange={() => setArrive(NO)}
+              />
+              <span className={styles.radioText}>{NO}</span>
             </label>
           </div>
         </div>

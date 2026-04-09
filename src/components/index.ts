@@ -1,4 +1,3 @@
-export { Intro } from "./intro";
+/** @format */
 
-export { Vignette } from "./vignette";
 export { default as Footer } from "./footer/Footer";

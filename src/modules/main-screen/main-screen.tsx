@@ -1,45 +1,34 @@
+/** @format */
+
 import * as React from "react";
 
-import styles from "./main.module.css";
-
-import locationfor from "@assets/icons/locationfor.svg";
-import location from "@assets/icons/location.svg";
-
-import { Intro } from "@components/intro";
+import { LoveHeroScreen } from "@components/love-hero";
 import ChurchPage from "@components/event-details/ChurchPage";
 import Programmer from "@components/programmer/Programmer";
 import HallPage from "@components/event-details/HallPage";
+
+import rsvpImage from "@assets/images/wedding_invitation.png";
+
+import { WeddingCalendar } from "@components/calendar";
+
 import { Footer } from "@components";
 
-import Timeline from "@modules/testTime/Timeline";
+import styles from "./main.module.css";
 
 const MainScreen = () => (
-  <div
-    style={{ width: "100%" }}
-    // className={cn(block.block(), block.modifyBlock({ open: isInvitationOpen }))}
-  >
-    <Intro />
+  <div style={{ width: "100%" }}>
+    <LoveHeroScreen />
 
     <div className={styles.wrapper}>
-      <p className={styles.text_inv}>
-        Սիրելի ընկերներ և հարազատներ,
-        <b />
-        Սիրով հրավիրում ենք Ձեզ մեր պսակադրությանը և հարսանյաց հանդեսին՝ կիսելու
-        մեզ հետ այս հիշարժան օրը։
-      </p>
-
-      <p className={styles.text_date}>XX.XX.XXXX</p>
+      <img src={rsvpImage} alt="rsvpImages" className={styles.images} />
+      <WeddingCalendar year={2026} month={5} highlightDay={21} />
     </div>
 
     <div className={styles.container}>
-      <img src={locationfor} alt="My SVG" className={styles.image} />
-      <img src={location} alt="location" width={50} height={70} />
-
+      <p className={styles.image}> Locations</p>
       <ChurchPage />
       <HallPage />
       <Programmer />
-
-      <Timeline />
       <Footer />
     </div>
   </div>

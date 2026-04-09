@@ -1,0 +1,118 @@
+.screen {
+  --cream: #f5f2ed;
+  --grid-line: #c5c0b8;
+  --text-muted: #6b6560;
+  --accent: #9c1f2e;
+  --ink: #1a1816;
+
+  /* На всю ширину вьюпорта (вылет из узкого wrapper) */
+  width: 100vw;
+  max-width: 100%;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  box-sizing: border-box;
+
+  padding: clamp(1.25rem, 4vw, 2rem)
+    max(1rem, env(safe-area-inset-right))
+    clamp(1.5rem, 5vw, 2.5rem)
+    max(1rem, env(safe-area-inset-left));
+  background: var(--cream);
+  position: relative;
+  overflow: hidden;
+}
+
+.monthTitle {
+  font-family: "Noto Serif Armenian", "Noto Sans Armenian", serif;
+  font-size: clamp(2.25rem, 11vw, 4rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--accent);
+  text-align: center;
+  margin: 0 0 clamp(1rem, 4vw, 1.5rem);
+  letter-spacing: 0.02em;
+  line-height: 1.05;
+}
+
+.grid {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border: 1px solid var(--grid-line);
+  border-bottom: none;
+}
+
+.weekdayRow,
+.dateRow {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  width: 100%;
+}
+
+.weekdayRow {
+  border-bottom: 1px solid var(--grid-line);
+}
+
+.weekdayCell {
+  font-family: "Noto Sans Armenian", sans-serif;
+  font-size: clamp(0.55rem, 2.8vw, 0.85rem);
+  font-weight: 300;
+  color: var(--text-muted);
+  text-align: center;
+  padding: clamp(0.5rem, 2.5vw, 0.85rem) clamp(0.15rem, 1vw, 0.35rem);
+  border-right: 1px solid var(--grid-line);
+  line-height: 1.2;
+  hyphens: auto;
+  word-break: break-word;
+}
+
+.weekdayCell:last-child {
+  border-right: none;
+}
+
+.weekdayAccent {
+  color: var(--accent);
+  font-weight: 400;
+}
+
+.dateRow {
+  border-bottom: 1px solid var(--grid-line);
+  min-height: clamp(4rem, 22vw, 6rem);
+}
+
+.dateCell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid var(--grid-line);
+  padding: clamp(0.5rem, 2vw, 1rem) 0;
+}
+
+.dateCell:last-child {
+  border-right: none;
+}
+
+.dateNum {
+  font-family: "Noto Serif Armenian", "Times New Roman", serif;
+  font-size: clamp(2.25rem, 14vw, 4.5rem);
+  font-weight: 400;
+  color: var(--ink);
+  line-height: 1;
+}
+
+.dateNumAccent {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.flourish {
+  margin-top: clamp(1rem, 3vw, 1.35rem);
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+  opacity: 0.92;
+}
+
+.flourish svg {
+  width: min(90vw, 280px);
+  height: auto;
+}

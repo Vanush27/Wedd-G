@@ -1,17 +1,19 @@
+/** @format */
+
 import React from "react";
 
-import gayane_vanq from "@assets/images/Gayane_charch.jpg";
+import saxmosavanq from "@assets/icons/saxm.svg";
 import MapDetalis from "@ui-kit/MapDetalis/MapDetalis";
 
 const ChurchPage: React.FC = () => {
   return (
     <div>
       <MapDetalis
-        url={"https://yandex.ru/map-widget/v1/-/CHqQyK6O"}
-        name={"Սուրբ Գայանե եկեղեցի"}
-        address={"Էջմիածին քաղաք"}
-        time={"16:00"}
-        img={gayane_vanq}
+        url={"https://yandex.ru/map-widget/v1/-/CPq-YZ3f"}
+        name={"Սաղմոսավանքի վանական համալիր"}
+        address={"Սաղմոսավան գյուղ"}
+        time={"13:20"}
+        img={saxmosavanq}
       />
     </div>
   );

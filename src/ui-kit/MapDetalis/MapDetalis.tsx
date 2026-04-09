@@ -1,3 +1,5 @@
+/** @format */
+
 import styles from "./MapDetalis.module.css";
 
 interface MapsProps {
@@ -24,7 +26,7 @@ const MapDetalis = ({ url, name, address, time, img }: MapsProps) => {
 
         <div className={styles.button_box}>
           <button onClick={handleClick} className={styles.map_button}>
-            Քարտեզ
+            ինչպես հասնել
           </button>
         </div>
       </div>

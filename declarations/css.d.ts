@@ -1,3 +1,8 @@
+declare module "*.module.css" {
+  const classes: Readonly<Record<string, string>>;
+  export default classes;
+}
+
 declare module "*.css" {
   interface IClassNames {
     [className: string]: string;
@@ -14,6 +19,16 @@ declare module "*.scss" {
 declare module "*.png" {
   const value;
   export default value;
+}
+
+declare module "*.jpg" {
+  const src: string;
+  export default src;
+}
+
+declare module "*.jpeg" {
+  const src: string;
+  export default src;
 }
 
 declare module "*.mp3" {

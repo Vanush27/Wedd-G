@@ -1,16 +1,15 @@
-import time from "@assets/icons/timeforyou.svg";
+/** @format */
+
+import ScheduleAnimated from "@ui-kit/ScheduleAnimated/ScheduleAnimated";
 import RSVPFormt from "../RSVP/RSVPform";
 
 import styles from "./Programmer.module.css";
-import Timeline from "@ui-kit/Timeline/Timeline";
-import { WaxSealInvite } from "@modules/wax-sealInvite-screen";
 
 const Programmer = () => {
   return (
     <div className={styles.container}>
-      <WaxSealInvite />
-      <img src={time} alt="time for you" className={styles.programmerImg} />
-      <Timeline />
+      <p className={styles.image}>Timeline</p>
+      <ScheduleAnimated />
       <RSVPFormt />
     </div>
   );

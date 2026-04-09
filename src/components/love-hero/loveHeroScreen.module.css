@@ -1,0 +1,122 @@
+/** @format */
+
+.screen {
+  --red-soft: rgb(238 0 0 / 82%);
+
+  position: relative;
+  min-height: min(100vh, 100dvh);
+  width: 100%;
+
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* padding: clamp(0.75rem, 3vw, 1.25rem) clamp(1rem, 4vw, 1.5rem)
+    clamp(1.5rem, 5vw, 2.5rem); */
+  box-sizing: border-box;
+}
+
+.patternWrap {
+  position: absolute;
+  top: -8%;
+  left: -25%;
+  width: 150%;
+  height: 65%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.patternInner {
+  transform: rotate(-16deg) translateY(4%);
+  display: flex;
+  flex-direction: column;
+  gap: 2.5em;
+  
+}
+
+.patternLine {
+  font-family: var(--font-script-love, "Great Vibes", cursive);
+  font-size: 44px;
+  font-weight: 500;
+  color: var(--red-soft);
+  white-space: nowrap;
+  line-height: 1.25;
+
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  justify-content: center;
+  width: 100%;
+  max-width: 420px;
+  /* margin: 0 auto; */
+  /* padding-top: clamp(2rem, 12vh, 4rem); */
+}
+
+.photoWrap {
+  margin: 0 auto clamp(1.25rem, 5vw, 2rem);
+
+}
+
+.photo {
+  display: block;
+  max-width: min(450px, 80vw);
+  width: 100%;
+  height: auto;
+  /* border: 3px solid #fff; */
+  /* border-radius: 2px; */
+  box-shadow: 0 12px 40px rgba(30, 15, 20, 0.18),
+    0 2px 0 rgba(255, 255, 255, 0.5) inset;
+  filter: grayscale(1) contrast(1.06);
+  transform: rotate(-13deg);
+  object-fit: cover;
+}
+
+.names {
+  /* font-family: "Pinyon Script", cursive; */
+  font-family: var(--font-hy-serif, "Noto Serif Armenian", serif);
+  font-size: 30px;
+  /* font-weight: 400; */
+
+  color: #ac2722;
+  position: absolute;
+  bottom: 33%;
+  /* text-align: center; */
+  /* margin: 0; */
+  line-height: 1.2;
+
+  letter-spacing: 0.1em;
+  text-shadow: 0 2px 0 rgba(234, 15, 15, 0.4);
+}
+
+.scrollHint {
+  /* margin-top: auto; */
+  /* padding-top: clamp(1rem, 4vh, 2rem); */
+  display: flex;
+  justify-content: center;
+  opacity: 0.8;
+  color: rgba(231, 11, 11, 0.95);
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.12));
+}
+
+.scrollHint svg {
+  width: clamp(42px, 6vw, 48px);
+  height: auto;
+  animation: bounceHint 2s ease-in-out infinite;
+}
+
+@keyframes bounceHint {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(6px);
+  }
+}

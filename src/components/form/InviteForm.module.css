@@ -19,8 +19,8 @@
 }
 
 .buttonWrapper {
-  padding-left: 30px;
-  padding-right: 30px;
+  /* padding-left: 30px; */
+  /* padding-right: 30px; */
   padding-bottom: 50px;
   padding-top: 30px;
 }
@@ -28,10 +28,10 @@
   padding: 20px;
   width: 100%;
   border-radius: 18px;
-  background: var(--color-primaryBlack);
-  color: var(--color-white);
+  color: var(--color-primaryBlack);
+  background: var(--color-white);
   font-size: 22px;
-  font-family: monospace;
+  /* font-family: monospace; */
 }
 
 .label {
@@ -40,10 +40,10 @@
 }
 
 .quantity {
-  padding-top: 30px;
-  font-size: 21px;
-  font-weight: 600;
-  line-height: 1.5;
+  padding-top: 25px;
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 2.0;
 }
 
 .title_text {
