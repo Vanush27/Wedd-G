@@ -1,7 +1,7 @@
+/** @format */
+
 import { useState } from "react";
 
-// import VolumeUpIcon from "@mui/icons-material/VolumeUp";
-// import VolumeOffIcon from "@mui/icons-material/VolumeOff";
 import audioSrc from "@assets/audio/insatiable.mp3";
 import styles from "./AudioPlayer.module.css";
 
@@ -15,13 +15,8 @@ const AudioPlayer = ({ isInvitationOpen }: any) => {
   const [isPlaying, setIsPlaying] = useState(isInvitationOpen);
 
   return (
-    <div className={styles.container}>
-      <HowlerComponent
-        src={audioSrc}
-        playing={isPlaying}
-        loop={true}
-        html5={true}
-      />
+    <div>
+      <HowlerComponent src={audioSrc} playing={isPlaying} loop html5 />
 
       <motion.button
         className={styles.button}

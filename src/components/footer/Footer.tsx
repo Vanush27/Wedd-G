@@ -1,11 +1,13 @@
 /** @format */
 
 import styles from "./Foter.module.css";
+import Smile from "./Smile";
 
 const Footer = () => {
   return (
     <div className={styles.footerContainer}>
-      <svg
+      <Smile />
+      {/* <svg
         width="360"
         height="100"
         viewBox="0 0 360 120"
@@ -44,7 +46,7 @@ const Footer = () => {
           stroke-width="3"
           fill="none"
         />
-      </svg>
+      </svg> */}
     </div>
   );
 };

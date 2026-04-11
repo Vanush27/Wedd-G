@@ -1,9 +1,3 @@
-.container {
-  /* display: flex; */
-  /* justify-content: center; */
-  /* align-items: center; */
-  /* height: 100vh; */
-}
 
 .button {
   background: none;
@@ -22,13 +16,10 @@
   position: fixed;
   top: 7%;
   right: 5%;
-  /* padding: 15px; */
-  /* color: #055491; */
 
-  /* border-radius: 10px; */
-  /* background-color: transparent; */
 }
 
 .icon {
   color: #f28b82;
+  background-color: transparent;
 }
