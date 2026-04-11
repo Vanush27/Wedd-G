@@ -19,7 +19,7 @@ const steps = [
   { y: 640, time: "16:30", text: "Ռեստորան" },
 ];
 
-const SchedulePremium: React.FC = () => {
+const ScheduleAnimated: React.FC = () => {
   return (
     <div className="w-full min-h-screen flex justify-center bg-[#f5f0ea] py-16">
       <svg width="320" height="820" viewBox="0 0 320 820">
@@ -47,11 +47,11 @@ const SchedulePremium: React.FC = () => {
               y={step.y - 45}
               width={100}
               height={100}
-              transform="translate(-35,0)"
+              transform="translate(-25,0)"
             />
 
             <text
-              x={i % 2 === 0 ? 20 : 110}
+              x={i % 2 === 0 ? 20 : 70}
               y={step.y}
               textAnchor={i % 2 === 0 ? "start" : "end"}
               fontSize="22"
@@ -77,4 +77,4 @@ const SchedulePremium: React.FC = () => {
   );
 };
 
-export default SchedulePremium;
+export default ScheduleAnimated;
