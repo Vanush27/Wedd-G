@@ -1,3 +1,5 @@
+/** @format */
+
 declare module "*.module.css" {
   const classes: Readonly<Record<string, string>>;
   export default classes;
@@ -18,7 +20,7 @@ declare module "*.scss" {
 
 declare module "*.png" {
   const value;
-  export default value;
+  export default src;
 }
 
 declare module "*.jpg" {

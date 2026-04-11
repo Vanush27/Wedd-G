@@ -37,10 +37,16 @@ const ScheduleAnimated: React.FC = () => {
           <motion.g
             key={i}
             initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: i * 0.3 }}
+          >
+            {/* <motion.g
+            key={i}
+            initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: i * 0.2 }}
             viewport={{ once: true }}
-          >
+          > */}
             <image
               href={i === 0 ? carSolo : carCouple}
               x={160}
