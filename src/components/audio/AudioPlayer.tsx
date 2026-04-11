@@ -1,6 +1,6 @@
 /** @format */
 
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { PlayCircle, PauseCircle } from "lucide-react";
 import ReactHowler from "react-howler";
