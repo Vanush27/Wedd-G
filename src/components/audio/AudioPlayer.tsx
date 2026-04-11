@@ -1,28 +1,17 @@
 /** @format */
 
-import { useEffect, useState } from "react";
-
-import audioSrc from "@assets/audio/insatiable.mp3";
-import styles from "./AudioPlayer.module.css";
-
+import { useState, useEffect, useMemo } from "react";
 import { motion } from "framer-motion";
 import { PlayCircle, PauseCircle } from "lucide-react";
 import ReactHowler from "react-howler";
 
+import audioSrc from "@assets/audio/insatiable.mp3";
+import styles from "./AudioPlayer.module.css";
+
 const HowlerComponent = ReactHowler as any;
 
-const AudioPlayer = ({ isInvitationOpen, onToggle }: any) => {
-  const [isPlaying, setIsPlaying] = useState(isInvitationOpen);
-
-  const handleClick = () => {
-    const newState = !isPlaying;
-    setIsPlaying(newState);
-
-    // 🔥 emit event to parent
-    if (onToggle) {
-      onToggle(newState);
-    }
-  };
+const AudioPlayer = ({ isInvitationOpen }: any) => {
+  const [isPlaying, setIsPlaying] = useState(false);
 
   useEffect(() => {
     setIsPlaying(isInvitationOpen);
@@ -30,11 +19,11 @@ const AudioPlayer = ({ isInvitationOpen, onToggle }: any) => {
 
   return (
     <div>
-      <HowlerComponent src={audioSrc} playing={isPlaying} loop html5 />
+      <HowlerComponent src={audioSrc} playing={isPlaying} loop />
 
       <motion.button
         className={styles.button}
-        onClick={handleClick}
+        onClick={() => setIsPlaying((prev) => !prev)}
         animate={{ rotate: isPlaying ? 720 : 0 }}
         transition={{
           duration: 4,
