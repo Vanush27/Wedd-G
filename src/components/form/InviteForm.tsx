@@ -130,7 +130,6 @@ const InviteForm: React.FC = () => {
             </label>
           </div>
         </div>
-
         <div className={styles.buttonWrapper}>
           <button type="submit" className={styles.button} disabled={loading}>
             {loading ? "Ուղարկվում..." : "Ուղարկել"}

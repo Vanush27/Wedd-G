@@ -8,7 +8,13 @@ import "./styles";
 function App() {
   return (
     <>
-      <AudioPlayer isInvitationOpen={true} />
+      <AudioPlayer
+        isInvitationOpen={true}
+        onToggle={(state: boolean) => {
+          console.log("Audio playing:", state);
+        }}
+      />
+
       <MainScreen />
     </>
   );

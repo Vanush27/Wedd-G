@@ -3,8 +3,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-import carSolo from "@assets/images/car-solo.png";
-import carCouple from "@assets/images/car-couple.png";
+import carSolo from "@assets/images/carSolo.png";
+import carCouple from "@assets/images/carCouple.png";
 
 // smoother elegant path
 const path = `M160 40

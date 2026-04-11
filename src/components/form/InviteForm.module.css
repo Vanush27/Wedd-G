@@ -22,16 +22,17 @@
   /* padding-left: 30px; */
   /* padding-right: 30px; */
   padding-bottom: 50px;
-  padding-top: 30px;
+  padding-top: 33px;
 }
 .button {
-  padding: 20px;
+  padding: 15px;
   width: 100%;
   border-radius: 18px;
   color: var(--color-primaryBlack);
   background: var(--color-white);
   font-size: 22px;
   /* font-family: monospace; */
+  font-weight: 600;
 }
 
 .label {

@@ -1,6 +1,6 @@
 /** @format */
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import audioSrc from "@assets/audio/insatiable.mp3";
 import styles from "./AudioPlayer.module.css";
@@ -11,8 +11,22 @@ import ReactHowler from "react-howler";
 
 const HowlerComponent = ReactHowler as any;
 
-const AudioPlayer = ({ isInvitationOpen }: any) => {
+const AudioPlayer = ({ isInvitationOpen, onToggle }: any) => {
   const [isPlaying, setIsPlaying] = useState(isInvitationOpen);
+
+  const handleClick = () => {
+    const newState = !isPlaying;
+    setIsPlaying(newState);
+
+    // 🔥 emit event to parent
+    if (onToggle) {
+      onToggle(newState);
+    }
+  };
+
+  useEffect(() => {
+    setIsPlaying(isInvitationOpen);
+  }, [isInvitationOpen]);
 
   return (
     <div>
@@ -20,7 +34,7 @@ const AudioPlayer = ({ isInvitationOpen }: any) => {
 
       <motion.button
         className={styles.button}
-        onClick={() => setIsPlaying(!isPlaying)}
+        onClick={handleClick}
         animate={{ rotate: isPlaying ? 720 : 0 }}
         transition={{
           duration: 4,
