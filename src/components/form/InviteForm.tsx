@@ -2,8 +2,10 @@
 
 import * as React from "react";
 import { useState } from "react";
+import { nanoid } from "nanoid";
+
 import { ToastContainer, toast } from "react-toastify";
-import { addDoc, collection } from "firebase/firestore";
+import { doc, setDoc } from "firebase/firestore";
 import { db } from "../../firebase.config";
 
 import "react-toastify/dist/ReactToastify.css";
@@ -35,7 +37,11 @@ const InviteForm: React.FC = () => {
         createdAt: new Date(),
       };
 
-      await addDoc(collection(db, "users"), formData);
+      const id = `${nameValue}_${quantity}_${nanoid(4)}`;
+
+      // await addDoc(collection(db, "users"), formData);
+      await setDoc(doc(db, "users", id), formData);
+
       setNameValue("");
       setQuantity("");
       setArrive(OK);
