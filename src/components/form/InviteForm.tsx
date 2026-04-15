@@ -6,7 +6,7 @@ import { nanoid } from "nanoid";
 
 import { ToastContainer, toast } from "react-toastify";
 import { doc, setDoc } from "firebase/firestore";
-import { db } from "../../firebase.config";
+import { Vapid_Key, db } from "../../firebase.config";
 
 import { getMessaging, getToken, onMessage } from "firebase/messaging";
 
@@ -18,9 +18,6 @@ const NO = "Չեմ կարող գալ";
 
 const PESA = "Փեսա";
 const HARS = "Հարս";
-
-const vapidKey =
-  "BHX5FiEDWQegWexDjc4MnLNzIERFTO0MpEPR-bxgHJaeltAM2Gkx2Ezt9yrI0N6AenrkjV2jI3VsWw1p6dTFub4";
 
 const InviteForm: React.FC = () => {
   const [nameValue, setNameValue] = useState("");
@@ -142,7 +139,7 @@ const InviteForm: React.FC = () => {
       let token = null;
       try {
         token = await getToken(messaging, {
-          vapidKey: vapidKey,
+          vapidKey: Vapid_Key,
           serviceWorkerRegistration: registration,
         });
         console.log("FCM Token:", token);

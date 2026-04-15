@@ -1,3 +1,5 @@
+/** @format */
+
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { addDoc, collection, doc, getDoc, setDoc } from "firebase/firestore";
@@ -15,5 +17,7 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+export const Vapid_Key =
+  "BHX5FiEDWQegWexDjc4MnLNzIERFTO0MpEPR-bxgHJaeltAM2Gkx2Ezt9yrI0N6AenrkjV2jI3VsWw1p6dTFub4";
 
 export { db, addDoc, collection, doc, getDoc, setDoc };
