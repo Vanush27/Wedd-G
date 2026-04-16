@@ -26,8 +26,9 @@ const InviteForm: React.FC = () => {
   const [arrive, setArrive] = useState(OK);
   const [loading, setLoading] = useState(false);
 
-  const [showFullscreenNotification, setShowFullscreenNotification] =
-    useState(false);
+  // const [showFullscreenNotification, setShowFullscreenNotification] =
+  //   useState(false);
+
   const [notificationData, setNotificationData] = useState({
     title: "",
     body: "",
@@ -51,7 +52,7 @@ const InviteForm: React.FC = () => {
             body: `Ձեր սեղանի համարն է ${tableNumber}`,
             tableNumber: tableNumber,
           });
-          setShowFullscreenNotification(true);
+          // setShowFullscreenNotification(true);
         }
       }
     };
