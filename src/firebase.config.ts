@@ -5,7 +5,7 @@ import { getFirestore } from "firebase/firestore";
 import { addDoc, collection, doc, getDoc, setDoc } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: process.env.REACT_APP_API_KEY,
+  apiKey: "AIzaSyBhy1v_--XUoGMND7SgOlsEhWQZufGJwAA",
   authDomain: "wedding-e3f7b.firebaseapp.com",
   databaseURL: "https://wedding-e3f7b-default-rtdb.firebaseio.com",
   projectId: "wedding-e3f7b",
@@ -17,5 +17,7 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+export const REACT_APP_VAPID_KEY =
+  "BHX5FiEDWQegWexDjc4MnLNzIERFTO0MpEPR-bxgHJaeltAM2Gkx2Ezt9yrI0N6AenrkjV2jI3VsWw1p6dTFub4";
 
 export { db, addDoc, collection, doc, getDoc, setDoc };

@@ -6,7 +6,7 @@ import { nanoid } from "nanoid";
 
 import { ToastContainer, toast } from "react-toastify";
 import { doc, setDoc } from "firebase/firestore";
-import { db } from "../../firebase.config";
+import { REACT_APP_VAPID_KEY, db } from "../../firebase.config";
 
 import { getMessaging, getToken } from "firebase/messaging";
 
@@ -139,7 +139,7 @@ const InviteForm: React.FC = () => {
       let token = null;
       try {
         token = await getToken(messaging, {
-          vapidKey: process.env.REACT_APP_VAPID_KEY,
+          vapidKey: REACT_APP_VAPID_KEY,
           serviceWorkerRegistration: registration,
         });
         console.log("FCM Token:", token);
