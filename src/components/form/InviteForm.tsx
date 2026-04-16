@@ -29,52 +29,52 @@ const InviteForm: React.FC = () => {
   // const [showFullscreenNotification, setShowFullscreenNotification] =
   //   useState(false);
 
-  const [notificationData, setNotificationData] = useState({
-    title: "",
-    body: "",
-    tableNumber: "",
-  });
+  // const [notificationData, setNotificationData] = useState({
+  //   title: "",
+  //   body: "",
+  //   tableNumber: "",
+  // });
 
   const messaging = getMessaging();
 
-  useEffect(() => {
-    // Обработка сообщений от Service Worker
-    const handleServiceWorkerMessage = (event: MessageEvent) => {
-      console.log("Сообщение от Service Worker:", event.data);
+  // useEffect(() => {
+  //   // Обработка сообщений от Service Worker
+  //   const handleServiceWorkerMessage = (event: MessageEvent) => {
+  //     console.log("Сообщение от Service Worker:", event.data);
 
-      if (event.data && event.data.type === "TABLE_NUMBER") {
-        const tableNumber = event.data.tableNumber;
+  //     if (event.data && event.data.type === "TABLE_NUMBER") {
+  //       const tableNumber = event.data.tableNumber;
 
-        // Показываем полноэкранное уведомление
-        if (tableNumber) {
-          setNotificationData({
-            title: "Սեղան է նշանակվել",
-            body: `Ձեր սեղանի համարն է ${tableNumber}`,
-            tableNumber: tableNumber,
-          });
-          // setShowFullscreenNotification(true);
-        }
-      }
-    };
+  //       // Показываем полноэкранное уведомление
+  //       if (tableNumber) {
+  //         setNotificationData({
+  //           title: "Սեղան է նշանակվել",
+  //           body: `Ձեր սեղանի համարն է ${tableNumber}`,
+  //           tableNumber: tableNumber,
+  //         });
+  //         // setShowFullscreenNotification(true);
+  //       }
+  //     }
+  //   };
 
-    // Регистрируем обработчик сообщений
-    navigator.serviceWorker.addEventListener(
-      "message",
-      handleServiceWorkerMessage
-    );
+  //   // Регистрируем обработчик сообщений
+  //   navigator.serviceWorker.addEventListener(
+  //     "message",
+  //     handleServiceWorkerMessage
+  //   );
 
-    // Проверяем, есть ли уже активный Service Worker
-    if (navigator.serviceWorker.controller) {
-      console.log("Service Worker контролирует страницу");
-    }
+  //   // Проверяем, есть ли уже активный Service Worker
+  //   if (navigator.serviceWorker.controller) {
+  //     console.log("Service Worker контролирует страницу");
+  //   }
 
-    return () => {
-      navigator.serviceWorker.removeEventListener(
-        "message",
-        handleServiceWorkerMessage
-      );
-    };
-  }, []);
+  //   return () => {
+  //     navigator.serviceWorker.removeEventListener(
+  //       "message",
+  //       handleServiceWorkerMessage
+  //     );
+  //   };
+  // }, []);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
