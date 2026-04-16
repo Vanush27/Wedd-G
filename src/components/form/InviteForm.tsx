@@ -1,7 +1,7 @@
 /** @format */
 
 import * as React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { nanoid } from "nanoid";
 
 import { ToastContainer, toast } from "react-toastify";
