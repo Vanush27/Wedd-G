@@ -66,35 +66,7 @@ messaging.onBackgroundMessage((payload) => {
   self.registration.showNotification(notificationTitle, notificationOptions);
 });
 
-// Обработка кликов по уведомлению
-// self.addEventListener('notificationclick', (event) => {
-//   event.notification.close();
-  
-//   const tableNumber = event.notification.data?.tableNumber;
-  
-//   // Открываем или фокусируемся на вкладке
-//   event.waitUntil(
-//     clients.matchAll({ type: 'window', includeUncontrolled: true })
-//       .then(windowClients => {
-//         // Если есть открытое окно, фокусируемся на нем
-//         for (let client of windowClients) {
-//           if (client.url.includes(self.location.origin) && 'focus' in client) {
-//             // Отправляем сообщение в окно с номером стола
-//             client.postMessage({
-//               type: 'TABLE_NUMBER',
-//               tableNumber: tableNumber,
-//               payload: event.notification.data
-//             });
-//             return client.focus();
-//           }
-//         }
-//         // Если нет открытого окна, открываем новое
-//         if (clients.openWindow) {
-//           return clients.openWindow('/');
-//         }
-//       })
-//   );
-// });
+
 
 // Обработка действий в уведомлении
 self.addEventListener('notificationactionclick', (event) => {

@@ -11,7 +11,7 @@ import styles from "./AudioPlayer.module.css";
 const HowlerComponent = ReactHowler as any;
 
 const AudioPlayer = ({ isInvitationOpen }: any) => {
-  const [isPlaying, setIsPlaying] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(true);
 
   useEffect(() => {
     setIsPlaying(isInvitationOpen);

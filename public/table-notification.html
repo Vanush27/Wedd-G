@@ -1,150 +1,155 @@
+<!-- @format -->
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Ձեր սեղանի համարը</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>Սեղանի համար / Victoria Հարսանյաց սրահ</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+      }
+
+      .container {
+        background: white;
+        border-radius: 40px;
+        padding: 3rem 2rem;
+        max-width: 500px;
+        width: 100%;
+        text-align: center;
+        animation: slideUp 0.5s ease-out;
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+      }
+
+      .nLetter {
+        font-size: 8rem;
+        font-weight: 800;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        margin-bottom: 1rem;
+        animation: bounce 0.6s ease-out;
+      }
+
+      .title {
+        font-size: 1.8rem;
+        color: #333;
+        margin-bottom: 1rem;
+        font-weight: 700;
+      }
+
+      .tableInfo {
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        border-radius: 20px;
+        padding: 2rem;
+        margin: 2rem 0;
+      }
+
+      .tableLabel {
+        font-size: 0.8rem;
+        letter-spacing: 2px;
+        color: #666;
+        font-weight: 600;
+        text-transform: uppercase;
+      }
+
+      .tableNumber {
+        font-size: 5rem;
+        font-weight: 800;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        margin-top: 0.5rem;
+      }
+
+      .message {
+        color: #666;
+        margin: 1rem 0 2rem;
+        line-height: 1.5;
+      }
+
+      .button {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border: none;
+        padding: 14px 30px;
+        font-size: 1rem;
+        font-weight: 600;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .button:hover {
+        transform: scale(1.05);
+        box-shadow: 0 5px 20px rgba(118, 75, 162, 0.4);
+      }
+
+      @keyframes slideUp {
+        from {
+          transform: translateY(50px);
+          opacity: 0;
         }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
+        to {
+          transform: translateY(0);
+          opacity: 1;
         }
-        
-        .container {
-            background: white;
-            border-radius: 40px;
-            padding: 3rem 2rem;
-            max-width: 500px;
-            width: 100%;
-            text-align: center;
-            animation: slideUp 0.5s ease-out;
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+      }
+
+      @keyframes bounce {
+        0%,
+        100% {
+          transform: scale(1);
         }
-        
-        .nLetter {
-            font-size: 8rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            margin-bottom: 1rem;
-            animation: bounce 0.6s ease-out;
+        50% {
+          transform: scale(1.1);
         }
-        
-        .title {
-            font-size: 1.8rem;
-            color: #333;
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
-        
-        .tableInfo {
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            border-radius: 20px;
-            padding: 2rem;
-            margin: 2rem 0;
-        }
-        
-        .tableLabel {
-            font-size: 0.8rem;
-            letter-spacing: 2px;
-            color: #666;
-            font-weight: 600;
-            text-transform: uppercase;
-        }
-        
-        .tableNumber {
-            font-size: 5rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            margin-top: 0.5rem;
-        }
-        
-        .message {
-            color: #666;
-            margin: 1rem 0 2rem;
-            line-height: 1.5;
-        }
-        
-        .button {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border: none;
-            padding: 14px 30px;
-            font-size: 1rem;
-            font-weight: 600;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 5px 20px rgba(118, 75, 162, 0.4);
-        }
-        
-        @keyframes slideUp {
-            from {
-                transform: translateY(50px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-        
-        @keyframes bounce {
-            0%, 100% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.1);
-            }
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <div class="nLetter">N</div>
-        <h1 class="title">Սեղան</h1>
-        <div class="tableInfo">
-            <div class="tableLabel">ՍԵՂԱՆԻ ՀԱՄԱՐ</div>
-            <div class="tableNumber" id="tableNumber">--</div>
-        </div>
-        <p class="message">Խնդրում ենք զբաղեցնել Ձեր տեղը</p>
-        <button class="button" onclick="window.close()">ՓԱԿԵԼ</button>
+      <div class="nLetter"></div>
+      <h1 class="title">Ձեր սեղանի համարը</h1>
+      <div class="tableInfo">
+        <div class="tableLabel">Սեղան №</div>
+      </div>
+      <button class="button" onclick="window.close()">ՓԱԿԵԼ</button>
     </div>
-    
+
     <script>
-        // Получаем номер стола из URL параметров
-        const urlParams = new URLSearchParams(window.location.search);
-        const tableNumber = urlParams.get('table');
-        
-        if (tableNumber) {
-            document.getElementById('tableNumber').textContent = tableNumber;
-        }
-        
-        // Также можно получить из localStorage
-        const savedTable = localStorage.getItem('tableNumber');
-        if (savedTable && !tableNumber) {
-            document.getElementById('tableNumber').textContent = savedTable;
-        }
+      // Получаем номер стола из URL параметров
+      const urlParams = new URLSearchParams(window.location.search);
+      const tableNumber = urlParams.get("table");
+
+      if (tableNumber) {
+        document.getElementById("tableNumber").textContent = tableNumber;
+      }
+
+      // Также можно получить из localStorage
+      const savedTable = localStorage.getItem("tableNumber");
+      if (savedTable && !tableNumber) {
+        document.getElementById("tableNumber").textContent = savedTable;
+      }
     </script>
-</body>
+  </body>
 </html>
