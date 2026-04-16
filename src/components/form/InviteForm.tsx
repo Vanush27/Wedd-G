@@ -6,9 +6,9 @@ import { nanoid } from "nanoid";
 
 import { ToastContainer, toast } from "react-toastify";
 import { doc, setDoc } from "firebase/firestore";
-import { Vapid_Key, db } from "../../firebase.config";
+import { db } from "../../firebase.config";
 
-import { getMessaging, getToken, onMessage } from "firebase/messaging";
+import { getMessaging, getToken } from "firebase/messaging";
 
 import "react-toastify/dist/ReactToastify.css";
 import styles from "./InviteForm.module.css";
@@ -76,37 +76,37 @@ const InviteForm: React.FC = () => {
   }, []);
 
   // Обработка уведомлений в foreground (когда приложение открыто)
-  useEffect(() => {
-    const unsubscribe = onMessage(messaging, (payload) => {
-      console.log("Foreground notification received:", payload);
+  // useEffect(() => {
+  //   const unsubscribe = onMessage(messaging, (payload) => {
+  //     console.log("Foreground notification received:", payload);
 
-      // Получаем данные из уведомления
-      const title = payload.notification?.title || "Նոր ծանուցում";
-      const body = payload.notification?.body || "";
+  //     // Получаем данные из уведомления
+  //     const title = payload.notification?.title || "Նոր ծանուցում";
+  //     const body = payload.notification?.body || "";
 
-      // Извлекаем номер стола из body или из data
-      let tableNumber = "";
-      if (payload.data?.tableNumber) {
-        tableNumber = payload.data.tableNumber;
-      } else {
-        // Ищем цифры в тексте уведомления
-        const numbers = body.match(/\d+/);
-        if (numbers) {
-          tableNumber = numbers[0];
-        }
-      }
+  //     // Извлекаем номер стола из body или из data
+  //     let tableNumber = "";
+  //     if (payload.data?.tableNumber) {
+  //       tableNumber = payload.data.tableNumber;
+  //     } else {
+  //       // Ищем цифры в тексте уведомления
+  //       const numbers = body.match(/\d+/);
+  //       if (numbers) {
+  //         tableNumber = numbers[0];
+  //       }
+  //     }
 
-      // Показываем полноэкранное уведомление с N и номером стола
-      setNotificationData({
-        title: title,
-        body: body,
-        tableNumber: tableNumber,
-      });
-      setShowFullscreenNotification(true);
-    });
+  //     // Показываем полноэкранное уведомление с N и номером стола
+  //     setNotificationData({
+  //       title: title,
+  //       body: body,
+  //       tableNumber: tableNumber,
+  //     });
+  //     setShowFullscreenNotification(true);
+  //   });
 
-    return () => unsubscribe();
-  }, [messaging]);
+  //   return () => unsubscribe();
+  // }, [messaging]);
 
   // const messaging = getMessaging();
 
@@ -139,7 +139,7 @@ const InviteForm: React.FC = () => {
       let token = null;
       try {
         token = await getToken(messaging, {
-          vapidKey: Vapid_Key,
+          vapidKey: process.env.REACT_APP_Vapid_Key,
           serviceWorkerRegistration: registration,
         });
         console.log("FCM Token:", token);
