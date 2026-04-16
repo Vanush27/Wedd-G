@@ -18,12 +18,7 @@ export const registerSW = async () => {
 function App() {
   return (
     <>
-      <AudioPlayer
-        isInvitationOpen={true}
-        onToggle={(state: boolean) => {
-          console.log("Audio playing:", state);
-        }}
-      />
+      <AudioPlayer />
 
       <MainScreen />
     </>
