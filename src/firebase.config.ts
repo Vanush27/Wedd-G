@@ -6,13 +6,13 @@ import { addDoc, collection, doc, getDoc, setDoc } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_API_KEY,
-  authDomain: process.env.REACT_APP_Auth_Domain,
-  databaseURL: process.env.REACT_APP_DataBase_URL,
-  projectId: process.env.REACT_APP_ProjectId,
-  storageBucket: process.env.REACT_APP_Storage_Bucket,
-  messagingSenderId: process.env.REACT_APP_Messaging_SenderId,
-  appId: process.env.REACT_APP_App_Id,
-  measurementId: process.env.REACT_APP_Measurement_Id,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  databaseURL: process.env.REACT_APP_DATABASE_URL,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_APP_ID,
+  measurementId: process.env.REACT_APP_MEASUREMENT_ID,
 };
 
 const app = initializeApp(firebaseConfig);

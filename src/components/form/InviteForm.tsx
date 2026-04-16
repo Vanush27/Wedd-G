@@ -139,7 +139,7 @@ const InviteForm: React.FC = () => {
       let token = null;
       try {
         token = await getToken(messaging, {
-          vapidKey: process.env.REACT_APP_Vapid_Key,
+          vapidKey: process.env.REACT_APP_VAPID_KEY,
           serviceWorkerRegistration: registration,
         });
         console.log("FCM Token:", token);
