@@ -1,7 +1,7 @@
 /** @format */
 
 import * as React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { nanoid } from "nanoid";
 
 import { ToastContainer, toast } from "react-toastify";
@@ -26,55 +26,54 @@ const InviteForm: React.FC = () => {
   const [arrive, setArrive] = useState(OK);
   const [loading, setLoading] = useState(false);
 
-  // const [showFullscreenNotification, setShowFullscreenNotification] =
-  //   useState(false);
-
-  // const [notificationData, setNotificationData] = useState({
-  //   title: "",
-  //   body: "",
-  //   tableNumber: "",
-  // });
+  const [showFullscreenNotification, setShowFullscreenNotification] =
+    useState(false);
+  const [notificationData, setNotificationData] = useState({
+    title: "",
+    body: "",
+    tableNumber: "",
+  });
 
   const messaging = getMessaging();
 
-  // useEffect(() => {
-  //   // Обработка сообщений от Service Worker
-  //   const handleServiceWorkerMessage = (event: MessageEvent) => {
-  //     console.log("Сообщение от Service Worker:", event.data);
+  useEffect(() => {
+    // Обработка сообщений от Service Worker
+    const handleServiceWorkerMessage = (event: MessageEvent) => {
+      console.log("Сообщение от Service Worker:", event.data);
 
-  //     if (event.data && event.data.type === "TABLE_NUMBER") {
-  //       const tableNumber = event.data.tableNumber;
+      if (event.data && event.data.type === "TABLE_NUMBER") {
+        const tableNumber = event.data.tableNumber;
 
-  //       // Показываем полноэкранное уведомление
-  //       if (tableNumber) {
-  //         setNotificationData({
-  //           title: "Սեղան է նշանակվել",
-  //           body: `Ձեր սեղանի համարն է ${tableNumber}`,
-  //           tableNumber: tableNumber,
-  //         });
-  //         // setShowFullscreenNotification(true);
-  //       }
-  //     }
-  //   };
+        // Показываем полноэкранное уведомление
+        if (tableNumber) {
+          setNotificationData({
+            title: "Սեղան է նշանակվել",
+            body: `Ձեր սեղանի համարն է ${tableNumber}`,
+            tableNumber: tableNumber,
+          });
+          setShowFullscreenNotification(true);
+        }
+      }
+    };
 
-  //   // Регистрируем обработчик сообщений
-  //   navigator.serviceWorker.addEventListener(
-  //     "message",
-  //     handleServiceWorkerMessage
-  //   );
+    // Регистрируем обработчик сообщений
+    navigator.serviceWorker.addEventListener(
+      "message",
+      handleServiceWorkerMessage
+    );
 
-  //   // Проверяем, есть ли уже активный Service Worker
-  //   if (navigator.serviceWorker.controller) {
-  //     console.log("Service Worker контролирует страницу");
-  //   }
+    // Проверяем, есть ли уже активный Service Worker
+    if (navigator.serviceWorker.controller) {
+      console.log("Service Worker контролирует страницу");
+    }
 
-  //   return () => {
-  //     navigator.serviceWorker.removeEventListener(
-  //       "message",
-  //       handleServiceWorkerMessage
-  //     );
-  //   };
-  // }, []);
+    return () => {
+      navigator.serviceWorker.removeEventListener(
+        "message",
+        handleServiceWorkerMessage
+      );
+    };
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -125,47 +124,47 @@ const InviteForm: React.FC = () => {
   };
 
   // Полноэкранное уведомление с буквой N и номером стола
-  // if (showFullscreenNotification) {
-  //   return (
-  //     <>
-  //       <div className={styles.fullscreenOverlay}>
-  //         <div className={styles.notificationCard}>
-  //           <div className={styles.nLetterContainer}>
-  //             <div className={styles.nLetter}>N</div>
-  //             {notificationData.tableNumber && (
-  //               <div className={styles.tableNumberBadge}>
-  //                 {notificationData.tableNumber}
-  //               </div>
-  //             )}
-  //           </div>
+  if (showFullscreenNotification) {
+    return (
+      <>
+        <div className={styles.fullscreenOverlay}>
+          <div className={styles.notificationCard}>
+            <div className={styles.nLetterContainer}>
+              <div className={styles.nLetter}>N</div>
+              {notificationData.tableNumber && (
+                <div className={styles.tableNumberBadge}>
+                  {notificationData.tableNumber}
+                </div>
+              )}
+            </div>
 
-  //           <h2 className={styles.notificationTitle}>
-  //             {notificationData.title}
-  //           </h2>
+            <h2 className={styles.notificationTitle}>
+              {notificationData.title}
+            </h2>
 
-  //           <p className={styles.notificationBody}>{notificationData.body}</p>
+            <p className={styles.notificationBody}>{notificationData.body}</p>
 
-  //           {notificationData.tableNumber && (
-  //             <div className={styles.tableInfo}>
-  //               <span className={styles.tableLabel}>ՍԵՂԱՆԻ ՀԱՄԱՐ</span>
-  //               <div className={styles.tableNumberDisplay}>
-  //                 {notificationData.tableNumber}
-  //               </div>
-  //             </div>
-  //           )}
+            {notificationData.tableNumber && (
+              <div className={styles.tableInfo}>
+                <span className={styles.tableLabel}>ՍԵՂԱՆԻ ՀԱՄԱՐ</span>
+                <div className={styles.tableNumberDisplay}>
+                  {notificationData.tableNumber}
+                </div>
+              </div>
+            )}
 
-  //           <button
-  //             className={styles.closeButton}
-  //             onClick={() => setShowFullscreenNotification(false)}
-  //           >
-  //             ՓԱԿԵԼ
-  //           </button>
-  //         </div>
-  //       </div>
-  //       <ToastContainer position="top-center" autoClose={7000} />
-  //     </>
-  //   );
-  // }
+            <button
+              className={styles.closeButton}
+              onClick={() => setShowFullscreenNotification(false)}
+            >
+              ՓԱԿԵԼ
+            </button>
+          </div>
+        </div>
+        <ToastContainer position="top-center" autoClose={7000} />
+      </>
+    );
+  }
   return (
     <>
       <form onSubmit={handleSubmit}>
