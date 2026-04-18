@@ -18,7 +18,7 @@ export const registerSW = async () => {
 function App() {
   return (
     <>
-      <AudioPlayer isInvitationOpen={true} />
+      <AudioPlayer />
 
       <MainScreen />
     </>

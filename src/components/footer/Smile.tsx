@@ -3,9 +3,6 @@
 const Smile = () => {
   return (
     <svg width="100%" viewBox="0 0 400 250">
-      {/* <circle cx="140" cy="90" r="6" fill="#b22222" /> */}
-      {/* <circle cx="260" cy="90" r="6" fill="#b22222" /> */}
-
       <path
         d="M80 150 C150 200, 250 200, 320 150"
         stroke="#b22222"

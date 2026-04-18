@@ -20,7 +20,7 @@ const MapDetalis = ({ url, name, address, time, img }: MapsProps) => {
       <div className={styles.wrapper}>
         <h3>{name}</h3>
         <p>{time}</p>
-        <p>{address}</p>
+        <h4>{address}</h4>
 
         <img src={img} className={styles.images} alt="maps" />
 

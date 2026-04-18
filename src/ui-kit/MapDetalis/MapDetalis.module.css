@@ -1,17 +1,22 @@
 .wrapper {
   text-align: center;
-  max-width: 370px;
+  max-width: 380px;
 }
 
 .wrapper > p {
-  font-size: 20px;
-  line-height: 1.9;
+  font-size: 24px;
   color: #7a1f1f;
 }
 
 .wrapper > h3 {
-  font-size: 23px;
-  line-height: 1.9;
+  font-size: 24px;
+  line-height: 1.5;
+  color: #7a1f1f;
+}
+
+.wrapper > h4 {
+  font-size: 21px;
+  line-height: 2.1;
   color: #7a1f1f;
 }
 
@@ -26,8 +31,6 @@
   font-weight: 500;
   border-width: 1px;
   border-radius: 30px;
-  /* background-color: #232323; */
-  /* background-position: center center; */
   border-color: transparent;
   border-style: solid;
   background-color:#ffffff;

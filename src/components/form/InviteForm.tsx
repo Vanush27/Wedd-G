@@ -172,6 +172,8 @@ const InviteForm: React.FC = () => {
           <label className={styles.quantity}>
             Անուն Ազգանուն
             <input
+              id="name"
+              name="name_s"
               type="text"
               value={nameValue}
               onChange={(e) => setNameValue(e.target.value)}
@@ -184,6 +186,8 @@ const InviteForm: React.FC = () => {
           <label className={styles.quantity}>
             Հյուրերի քանակը
             <input
+              id="quality"
+              name="quality"
               type="number"
               max={30}
               step={1}

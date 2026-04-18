@@ -22,7 +22,7 @@ const steps = [
 const ScheduleAnimated: React.FC = () => {
   return (
     <div className="w-full min-h-screen flex justify-center bg-[#f5f0ea] py-16">
-      <svg width="320" height="820" viewBox="0 0 320 820">
+      <svg width="320" height="820" viewBox="0 0 300 820">
         <motion.path
           d={path}
           fill="none"
@@ -40,13 +40,6 @@ const ScheduleAnimated: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: i * 0.3 }}
           >
-            {/* <motion.g
-            key={i}
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: i * 0.2 }}
-            viewport={{ once: true }}
-          > */}
             <image
               href={i === 0 ? carSolo : carCouple}
               x={160}
@@ -57,9 +50,9 @@ const ScheduleAnimated: React.FC = () => {
             />
 
             <text
-              x={i % 2 === 0 ? 20 : 70}
+              x={2}
               y={step.y}
-              textAnchor={i % 2 === 0 ? "start" : "end"}
+              textAnchor={"start"}
               fontSize="22"
               fill="#b22222"
               fontWeight="600"
@@ -68,10 +61,10 @@ const ScheduleAnimated: React.FC = () => {
             </text>
 
             <text
-              x={i % 2 === 0 ? 20 : 110}
+              x={0}
               y={step.y + 30}
-              textAnchor={i % 2 === 0 ? "start" : "end"}
-              fontSize="18"
+              textAnchor={"start"}
+              fontSize="20"
               fill="#b22222"
             >
               {step.text}

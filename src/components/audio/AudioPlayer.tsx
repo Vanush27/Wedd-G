@@ -1,6 +1,6 @@
 /** @format */
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { PlayCircle, PauseCircle } from "lucide-react";
 import ReactHowler from "react-howler";
@@ -10,15 +10,11 @@ import styles from "./AudioPlayer.module.css";
 
 const HowlerComponent = ReactHowler as any;
 
-const AudioPlayer = ({ isInvitationOpen }: any) => {
+const AudioPlayer = () => {
   const [isPlaying, setIsPlaying] = useState(true);
 
-  useEffect(() => {
-    setIsPlaying(isInvitationOpen);
-  }, [isInvitationOpen]);
-
   return (
-    <div>
+    <>
       <HowlerComponent src={audioSrc} playing={isPlaying} loop />
 
       <motion.button
@@ -26,7 +22,7 @@ const AudioPlayer = ({ isInvitationOpen }: any) => {
         onClick={() => setIsPlaying((prev) => !prev)}
         animate={{ rotate: isPlaying ? 720 : 0 }}
         transition={{
-          duration: 4,
+          duration: 10,
           repeat: isPlaying ? Infinity : 0,
           ease: "linear",
         }}
@@ -37,7 +33,7 @@ const AudioPlayer = ({ isInvitationOpen }: any) => {
           <PlayCircle size={60} className={styles.icon} />
         )}
       </motion.button>
-    </div>
+    </>
   );
 };
 
