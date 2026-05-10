@@ -8,6 +8,16 @@
   padding-top: 30px;
 }
 
+.backgroundImages{
+  background-image: url("@assets/images/background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: min(60vh, 60dvh);
+  border-radius:20px;
+  width: 100%;
+}
+
 .wrapper {
   display: flex;
   justify-content: center;

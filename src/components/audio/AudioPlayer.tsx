@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { PlayCircle, PauseCircle } from "lucide-react";
 import ReactHowler from "react-howler";
 
-import audioSrc from "@assets/audio/insatiable.mp3";
+import audioSrc from "@assets/audio/DieWithASmile.mp3";
 import styles from "./AudioPlayer.module.css";
 
 const HowlerComponent = ReactHowler as any;

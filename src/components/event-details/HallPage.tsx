@@ -1,6 +1,6 @@
 /** @format */
 
-import victoriaHall from "@assets/images/saxmosavanq.png";
+import victoriaHall from "@assets/images/victoriaHall.jpg";
 import MapDetalis from "@ui-kit/MapDetalis/MapDetalis";
 
 const HallPage = () => {

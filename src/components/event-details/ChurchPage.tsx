@@ -2,7 +2,7 @@
 
 import React from "react";
 
-import saxmosavanq from "@assets/icons/saxm.svg";
+import saxmosavanq from "@assets/images/saxmosavanq.jpg";
 import MapDetalis from "@ui-kit/MapDetalis/MapDetalis";
 
 const ChurchPage: React.FC = () => {

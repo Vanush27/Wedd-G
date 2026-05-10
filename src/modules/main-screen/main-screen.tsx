@@ -21,6 +21,7 @@ const MainScreen = () => (
 
     <div className={styles.wrapper}>
       <img src={rsvpImage} alt="rsvpImages" className={styles.images} />
+      <div className={styles.backgroundImages} />
       <WeddingCalendar year={2026} month={5} highlightDay={21} />
     </div>
 
