@@ -1,6 +1,6 @@
 /** @format */
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { PlayCircle, PauseCircle } from "lucide-react";
 import ReactHowler from "react-howler";
@@ -11,11 +11,24 @@ import styles from "./AudioPlayer.module.css";
 const HowlerComponent = ReactHowler as any;
 
 const AudioPlayer = () => {
-  const [isPlaying, setIsPlaying] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const handleTriggerClickEvent = () => {
+    setIsPlaying(true);
+  };
+
+  useEffect(() => {
+    handleTriggerClickEvent();
+  }, []);
 
   return (
     <>
-      <HowlerComponent src={audioSrc} playing={isPlaying} loop />
+      <HowlerComponent
+        onLoad={handleTriggerClickEvent}
+        src={audioSrc}
+        playing={isPlaying}
+        loop
+      />
 
       <motion.button
         className={styles.button}

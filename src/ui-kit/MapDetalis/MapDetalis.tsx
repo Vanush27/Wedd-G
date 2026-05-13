@@ -21,7 +21,9 @@ const MapDetalis = ({ url, name, address, time, img }: MapsProps) => {
       <p>{time}</p>
       <h4>{address}</h4>
 
-      <img src={img} className={styles.images} alt="maps" />
+      <div className={styles.photoWrapper}>
+        <img src={img} className={styles.images} alt="maps" />
+      </div>
 
       <div className={styles.button_box}>
         <button onClick={handleClick} className={styles.map_button}>
