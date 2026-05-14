@@ -35,8 +35,62 @@
 
     <title>Սամվել և Միլենա</title>
   </head>
+
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+
+    <script>
+      const ua = navigator.userAgent || "";
+
+      const isInstagram = ua.includes("Instagram");
+      const isFacebook = ua.includes("FBAN") || ua.includes("FBAV");
+      const isTelegram = ua.includes("Telegram");
+
+      const isInApp = isInstagram || isFacebook || isTelegram;
+
+      if (isInApp) {
+        window.location.replace(
+          "intent://samvel-milena.netlify.app/#Intent;scheme=https;package=com.android.chrome;end"
+        );
+
+        setTimeout(() => {
+          document.body.innerHTML = `
+            <div style="
+              height:100vh;
+              display:flex;
+              justify-content:center;
+              align-items:center;
+              flex-direction:column;
+              font-family:sans-serif;
+              text-align:center;
+              padding:20px;
+              background:white;
+            ">
+              <h2>Откройте в браузере</h2>
+    
+              <p style="max-width:300px">
+                Нажмите  ⋮  → Open in Browser
+              </p>
+    
+              <a
+                href="https://samvel-milena.netlify.app/"
+                target="_blank"
+                style="
+                  margin-top:20px;
+                  padding:14px 22px;
+                  border-radius:14px;
+                  background:black;
+                  color:white;
+                  text-decoration:none;
+                "
+              >
+              Բացել կայքը
+              </a>
+            </div>
+          `;
+        }, 1500);
+      }
+    </script>
   </body>
 </html>
