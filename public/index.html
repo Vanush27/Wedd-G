@@ -41,19 +41,40 @@
     <div id="root"></div>
 
     <script>
-      const ua = navigator.userAgent || "";
+      (function () {
+        const url = "https://samvel-milena.netlify.app/";
+        const ua = navigator.userAgent || "";
 
-      const isInstagram = ua.includes("Instagram");
-      const isFacebook = ua.includes("FBAN") || ua.includes("FBAV");
-      const isTelegram = ua.includes("Telegram");
+        const isInstagram = ua.includes("Instagram");
+        const isFacebook = ua.includes("FBAN") || ua.includes("FBAV");
+        const isTelegram = ua.includes("Telegram");
 
-      const isInApp = isInstagram || isFacebook || isTelegram;
+        const isIOS = /iPhone|iPad|iPod/i.test(ua);
+        const isAndroid = /Android/i.test(ua);
 
-      if (isInApp) {
-        window.location.replace(
-          "intent://samvel-milena.netlify.app/#Intent;scheme=https;package=com.android.chrome;end"
-        );
+        const isInApp = isInstagram || isFacebook || isTelegram;
 
+        if (!isInApp) return;
+
+        // iPhone / iPad
+        if (isIOS) {
+          // probuem Chrome
+          window.location.href = "googlechrome://samvel-milena.netlify.app";
+
+          // esli Chrome net → Safari
+          setTimeout(() => {
+            window.location.href =
+              "x-safari-https://samvel-milena.netlify.app/";
+          }, 800);
+        }
+
+        // Android
+        if (isAndroid) {
+          window.location.href =
+            "intent://samvel-milena.netlify.app/#Intent;scheme=https;package=com.android.chrome;end";
+        }
+
+        // fallback UI
         setTimeout(() => {
           document.body.innerHTML = `
             <div style="
@@ -62,35 +83,54 @@
               justify-content:center;
               align-items:center;
               flex-direction:column;
-              font-family:sans-serif;
               text-align:center;
               padding:20px;
-              background:white;
+              font-family:sans-serif;
+              background:#ffffff;
             ">
-              <h2>Откройте в браузере</h2>
+              <h2 style="margin-bottom:10px;">
+                Откройте в браузере
+              </h2>
     
-              <p style="max-width:300px">
-                Нажмите  ⋮  → Open in Browser
+              <p style="
+                max-width:320px;
+                line-height:1.5;
+                color:#555;
+              ">
+                Для лучшей работы сайта откройте его
+                через Safari или Chrome
               </p>
     
+              <div style="
+                margin-top:20px;
+                font-size:15px;
+                color:#222;
+              ">
+                Instagram / Facebook:
+                <br />
+                ⋮ → Open in Browser
+              </div>
+    
               <a
-                href="https://samvel-milena.netlify.app/"
+                href="${url}"
                 target="_blank"
                 style="
-                  margin-top:20px;
-                  padding:14px 22px;
-                  border-radius:14px;
+                  margin-top:30px;
+                  padding:14px 26px;
                   background:black;
                   color:white;
+                  border-radius:14px;
                   text-decoration:none;
+                  font-size:16px;
+                  font-weight:600;
                 "
               >
-              Բացել կայքը
+                Открыть сайт
               </a>
             </div>
           `;
-        }, 1500);
-      }
+        }, 1800);
+      })();
     </script>
   </body>
 </html>
